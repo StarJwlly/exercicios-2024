@@ -18,17 +18,18 @@ class Scrapper {
     $result = [];
 
     $finder = new \DomXPath($dom);
-    $classname="paper-card";
+    $classname = "paper-card";
     $nodes = $finder->query("//*[contains(@class, '$classname')]");
 
-    foreach($nodes as $node){
+    foreach ($nodes as $node) {
       $authors = [];
-      foreach($node->firstChild->nextSibling->childNodes as $author){
-        if($author->nodeType == 1)
+      foreach ($node->firstChild->nextSibling->childNodes as $author) {
+        if ($author->nodeType == 1) {
           array_push($authors, new Person(
             rtrim($author->nodeValue, ';'),
             $author->attributes->getNamedItem('title')->value
           ));
+        }
       }
       
       array_push($result, new Paper(
@@ -39,10 +40,6 @@ class Scrapper {
         ));
     }
 
-
-    return [ $result ];
+    return [$result];
   }
-
-  
-
 }
