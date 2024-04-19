@@ -8,15 +8,14 @@ use Chuva\Php\WebScrapping\Entity\Person;
 /**
  * Does the scrapping of a webpage.
  */
-class Scrapper{
+class Scrapper {
 
   /**
    * Loads paper information from the HTML and returns the array with the data.
    */
-  public function scrap(\DOMDocument $dom): array
-  {
+  public function scrap(\DOMDocument $dom): array {
     $sections = $dom->getElementsByTagName('section');
-    $result = []; 
+    $result = [];
 
     $finder = new \DomXPath($dom);
     $classname = "paper-card";
@@ -46,4 +45,5 @@ class Scrapper{
 
     return [$result];
   }
+  
 }
