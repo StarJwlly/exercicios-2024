@@ -45,5 +45,5 @@ class Scrapper {
 
     return [$result];
   }
-  
+
 }
