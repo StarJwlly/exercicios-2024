@@ -5,7 +5,7 @@ namespace Chuva\Php\WebScrapping;
 use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
 use Box\Spout\Common\Entity\Row;
 
-/**
+/** 
  * Runner for the Webscrapping exercice.
  */
 class Main {
